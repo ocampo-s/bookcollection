@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-#set apart 2023-09-03
+#set apart
 firebaseConfig/
 index.js
 .firebase

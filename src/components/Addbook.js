@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import StartFirebase from '../components/firebaseConfig/index'
+import { getDatabase } from "firebase/database"
 import { ref, set, get, update, remove, child } from "firebase/database"
 
 export class Addbook extends React.Component{
@@ -28,9 +28,10 @@ export class Addbook extends React.Component{
     
     componentDidMount(){
         this.setState({
-            db: StartFirebase()
+            db: getDatabase()
         });
     }
+
     render(){
 
         return(
@@ -42,7 +43,7 @@ export class Addbook extends React.Component{
             <p ></p>
         </div>
             <Form>
-            <Form.Group className="mb-3">
+                <Form.Group className="mb-3">
                     <Form.Label>Title</Form.Label>
                     <Form.Control type="text" placeholder="Enter the name of the book, magazine, newspaper, or loose article" value={this.state.key} onChange={e => {this.setState({key: e.target.value})}}/>
                 </Form.Group>
